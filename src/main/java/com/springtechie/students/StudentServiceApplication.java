@@ -1,13 +1,13 @@
-package com.example.demoEMP;
+package com.springtechie.students;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DemoEmpApplication {
+public class StudentServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoEmpApplication.class, args);
+		SpringApplication.run(StudentServiceApplication.class, args);
 	}
 
 }
