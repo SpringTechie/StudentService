@@ -38,5 +38,10 @@ public class StudentController {
         return studentService.deleteStudent(id);
     }
 
+    @GetMapping("/get/studentcourse/details/id/{id}")
+    public Student getStudentCourseDetailsById(@PathVariable int id) {
+        return studentService.getStudentCourseDetailsById(id);
+    }
+
 
 }

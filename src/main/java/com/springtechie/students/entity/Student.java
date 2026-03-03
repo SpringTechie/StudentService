@@ -17,10 +17,12 @@ public class Student {
     private String name;
     private String email;
     private String phoneNumber;
-    private List<Long> courseIds; //[j-1,p-1]
-    private Integer totalCoursesEnrolled; // 1 2
-    private Integer completedCourses; // 1
+    private List<String> courseIds;
+    private Integer totalCoursesEnrolled;
+    private Integer completedCourses;
     private Double averageRating;
+    @Transient
+    private List<Course> courseDetails;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
@@ -44,7 +46,8 @@ public class Student {
 
     }
 
-    public Student(Long id, String name, String email, String phoneNumber, List<Long> courseIds, Integer totalCoursesEnrolled, Integer completedCourses, Double averageRating, LocalDateTime createdAt, LocalDateTime updatedAt) {
+
+    public Student(Long id, String name, String email, String phoneNumber, List<String> courseIds, Integer totalCoursesEnrolled, Integer completedCourses, Double averageRating, List<Course> courseDetails, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -53,8 +56,17 @@ public class Student {
         this.totalCoursesEnrolled = totalCoursesEnrolled;
         this.completedCourses = completedCourses;
         this.averageRating = averageRating;
+        this.courseDetails = courseDetails;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
+    }
+
+    public List<Course> getCourseDetails() {
+        return courseDetails;
+    }
+
+    public void setCourseDetails(List<Course> courseDetails) {
+        this.courseDetails = courseDetails;
     }
 
     public Long getId() {
@@ -89,11 +101,11 @@ public class Student {
         this.phoneNumber = phoneNumber;
     }
 
-    public List<Long> getCourseIds() {
+    public List<String> getCourseIds() {
         return courseIds;
     }
 
-    public void setCourseIds(List<Long> courseIds) {
+    public void setCourseIds(List<String> courseIds) {
         this.courseIds = courseIds;
     }
 
