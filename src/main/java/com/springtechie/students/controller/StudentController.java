@@ -1,8 +1,11 @@
 package com.springtechie.students.controller;
 
+import com.springtechie.students.entity.Course;
 import com.springtechie.students.entity.Student;
 import com.springtechie.students.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -42,6 +45,12 @@ public class StudentController {
     public Student getStudentCourseDetailsById(@PathVariable int id) {
         return studentService.getStudentCourseDetailsById(id);
     }
+
+    @GetMapping("/get/courses")
+    public List<Course> getCourseDetails() {
+        return studentService.fetchCourses();
+    }
+
 
 
 }
